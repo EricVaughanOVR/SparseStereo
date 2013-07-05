@@ -44,7 +44,7 @@ public:
     {};
   };
 
-  /** Extracts 2-byte CensusDescriptor for each keypoint
+  /** Extracts 2-byte descriptor for each pixel in a sparse neighborhood about each keypoint
     * Adds the descriptors to resultImg, so that the extraction won't need to be repeated
     * for those locations
     * Only looks in the region of img contained by resultImg
@@ -53,8 +53,7 @@ public:
   void extractSparse(const cv::Mat& img, const std::vector<cv::KeyPoint>& keypoints, 
     TransformData& result);
 
-  /** Finds best match in img2 for each feature in img1.  Then does a Dense-Consistency check
-    * from img2->img1, to filter out incorrect matches
+  /** Finds best match in img2 for each feature in img1.
     */
   void match(TransformData& tfmData1, TransformData& tfmData2, 
     std::vector<cv::DMatch>& matches);
