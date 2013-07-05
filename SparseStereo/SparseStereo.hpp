@@ -1,3 +1,6 @@
+#ifndef SPARSE_STEREO_HPP
+#define SPARSE_STEREO_HPP
+
 #include <vector>
 #include <stdint.h>
 #include <opencv2/features2d/features2d.hpp>
@@ -35,8 +38,9 @@ public:
     Mat_32 transfmImg;
     std::vector<KpLite> kps;
 
+    //Value of 0x80000000 indicates that a descriptor has not yet been calculated for the given pixel
     TransformData(int rows, int cols)
-      : transfmImg(rows, cols)
+      : transfmImg(rows, cols, 0x80000000)
     {};
   };
 
@@ -116,3 +120,5 @@ private:
 
   std::vector<int> m_sampleOffsets_9x9;
 };
+
+#endif SPARSE_STEREO_HPP

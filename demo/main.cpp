@@ -1,13 +1,10 @@
 #include <iostream>
-#include <string>
 #include <vector>
 #include "SparseStereo.hpp"
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/features2d/features2d.hpp>
-#include <opencv2/nonfree/features2d.hpp>
-#include <opencv2/legacy/legacy.hpp>
 
 using namespace cv;
 
@@ -54,9 +51,6 @@ int main( int argc, char** argv )
   t = (double)getTickCount();
   SparseStereo::TransformData transfmData1(imgL.rows, imgL.cols);
   SparseStereo::TransformData transfmData2(imgL.rows, imgL.cols);
-  //Value of 0x80000000 indicates that a descriptor has not yet been calculated for the given pixel
-  transfmData1.transfmImg = Mat_32(imgL.rows, imgL.cols, 0x80000000);
-  transfmData2.transfmImg = Mat_32(imgL.rows, imgL.cols, 0x80000000);
 
   census.extractSparse(imgL, keypointsL, transfmData1);
   census.extractSparse(imgR, keypointsR, transfmData2);

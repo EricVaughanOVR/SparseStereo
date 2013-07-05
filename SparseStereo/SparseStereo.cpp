@@ -1,6 +1,5 @@
 #include "SparseStereo.hpp"
 #include <iostream>
-#include <xmmintrin.h>
 
 SparseStereo::SparseStereo(const cv::Mat::MStep& step, const int filterDist,
     const int validDisparity, const int epipolarRange)

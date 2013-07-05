@@ -1,4 +1,6 @@
-#include <memory>
+#ifndef MAT_32_HPP
+#define MAT_32_HPP
+
 #include <vector>
 #include <stdint.h>
 
@@ -54,3 +56,5 @@ struct Mat_32
       (offset.x + cols) > _parentX && (offset.y + rows) > _parentY);
   };
 };
+
+#endif MAT_32_HPP
