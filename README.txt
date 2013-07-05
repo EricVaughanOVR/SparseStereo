@@ -1,4 +1,4 @@
-Note: This won't build on *nix at the moment because I used atoi a couple of times.  Easily fixed, though.
+Note: The demo won't build on *nix at the moment because I used atoi a couple of times.  The library should, though.
 
 
 To do an out-of-source build for VS2010:
