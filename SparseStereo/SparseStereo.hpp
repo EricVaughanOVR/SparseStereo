@@ -61,7 +61,7 @@ public:
 
 private:
   /* The neighborhood must be guaranteed to exist around the given 
-   * pixel location, or both of these functions will crash
+   * pixel location, or these functions will crash
    */
   inline uint16_t transform9x9(const cv::Mat& img, const cv::Point2i pixelLoc)
   {
@@ -69,6 +69,9 @@ private:
     return transform9x9(img, pixelOffset);
   }
 
+  /* Computes the sparse 16-neighbor Census Transform about the given pixel.  Equivalent 
+   * to a 9x9 dense transform about the given pixel.
+   */
   uint16_t transform9x9(const cv::Mat& img, uchar* pixelLoc);
   
   /** Only looks in the region of img contained by resultImg
@@ -78,7 +81,6 @@ private:
     Mat_32& resultImg, std::vector<SubVector>& resultVector);
 
   /** Finds the Hamming Distance between two uint32_t
-    *
     */
   inline uint32_t calcHammingDist(const uint32_t _1, const uint32_t _2)
   {
@@ -101,7 +103,7 @@ private:
     return result;
   };
 
-  /* Computes the sum of Hamming Distances betweem two sparse correlation windows
+  /* Computes the sum of Hamming Distances between two sparse correlation windows
    * Assumes that the input Mat_32s were transformed with a compatible sparse-pattern.
    * i.e. - won't check validity of the pixels
    */
