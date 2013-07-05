@@ -3,6 +3,9 @@ Note: This won't build on *nix at the moment because I used atoi a couple of tim
 
 To do an out-of-source build for VS2010:
 
+(Modify the top-level CMakeLists.txt file)
+Change the OpenCV_INCLUDE and OpenCV_LIB variables so that they point to your OpenCV installation
+
 (from top-level of the project)
 mkdir _bld
 cd _bld
