@@ -1,4 +1,4 @@
-Note: The demo won't build on *nix at the moment because I used atoi a couple of times.  The library should, though.
+NOTE: This project will soon be deprecated.  You can find the same (and more) functionality in the VisualOdometryLib project, under CorrespondenceLib.  I'm leaving this up for now because the other lib does not yet have a non-SSE implementation.
 
 
 To do an out-of-source build for VS2010:
